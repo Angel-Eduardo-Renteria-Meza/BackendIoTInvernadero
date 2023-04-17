@@ -5,6 +5,7 @@ const cors = require("cors");
 /*Luego, se importan las rutas que se han definido en archivos separados utilizando el enrutador de Express. */
 const medicionesRoutes = require("./routes/mediciones.routes");
 const ultimoRoutes = require("./routes/ultimo.routes");
+const mediaDia = require("./routes/mediaDia");
 /*Luego, se importan las rutas que se han definido en archivos separados utilizando el enrutador de Express. */
 const app = express();
 /*Después, se crea una instancia de Express y se configuran los middleware para el análisis de solicitudes JSON y para permitir solicitudes CORS. También se configura el middleware Morgan para registrar los detalles de las solicitudes HTTP en la consola. */
@@ -19,5 +20,6 @@ app.get("/", (req, res) => {
 /*Finalmente, se definen las rutas específicas de la API utilizando los middleware de las rutas importadas. Estas rutas son /api/mediciones y /api/ultimo que se corresponden con las rutas definidas en los archivos mediciones.routes.js y ultimo.routes.js respectivamente. */
 app.use("/api/mediciones", medicionesRoutes);
 app.use("/api/ultimo", ultimoRoutes);
+app.use("/api", mediaDia)
 /*Por último, la aplicación Express se exporta para poder ser utilizada por el archivo index.js que inicia el servidor. */
 module.exports = app;
