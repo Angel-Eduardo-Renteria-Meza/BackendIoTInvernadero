@@ -1,19 +1,19 @@
 const mongoose = require('mongoose');
 
 const mediaSchema = mongoose.Schema({
-    mediaTemperatura: {
+    promedioTemperatura: {
         type: Number,
         required: true,
     },
-    media_Humedad_1: {
+    promedioHumedadAtm: {
         type: Number,
         required: true,
     },
-    media_Humedad_2: {
+    promedioHumedadCultivo1: {
         type: Number,
         required: true,
     },
-    media_Humedad_atm: {
+    promedioHumedadCultivo2: {
         type: Number,
         required: true,
     },
